@@ -1,0 +1,58 @@
+﻿ <Window x:Class="Books.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Books"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="130" MinWidth="130" MaxWidth="250"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*" MinWidth="300"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel x:Name="MenuStackPanel"
+                    Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" 
+                    Background="Beige" >
+            <Label x:Name="LogoLabel" Content="Библиотека" Height="85"
+                   FontWeight="Bold" FontSize="20" HorizontalContentAlignment="Center"
+                   VerticalContentAlignment="Center"
+                   Background="LightGray" Foreground="Black" />
+
+            <Label x:Name="ReadersLabel" Content="Читатели" 
+                   Margin="0,5,0,-5" />
+            <Button x:Name="ReadingsButton" Content="Пользования"  
+                    Margin="5,5,5,0" />
+            <Button x:Name="ReadersButton" Content="Читатели"  
+                    Margin="5,5,5,0" />                                                     
+            <Label x:Name="BooksLabel" Content="Книги" 
+                   Margin="0,5,0,-5" />
+            <Button x:Name="BooksButton" Content="Книги" 
+                    Margin="5,5,5,0" Click="BooksButton_Click"/>
+            <Button x:Name="CopiesButton" Content="Экземпляры" 
+                    Margin="5,5,5,0" Click="CopiesButton_Click"/>
+
+            <Label x:Name="ClassifsLabel" Content="Классификаторы" 
+                   Margin="0,5,0,-5" />
+            <Button x:Name="PublishersButton" Content="Издательства" 
+                    Margin="5,5,5,0" Click="PublishersButton_Click" />
+            <Button x:Name="GendersButton" Content="Пол" 
+                    Margin="5,5,5,0" />
+            <Button x:Name="clouseButton" Content="закрыть" 
+                    Margin="5,5,5,0" Click="clouseButton_Click" />
+            <Button x:Name="clouseAllButton" Content="закрыть всё" 
+                    Margin="5,5,5,0" Click="clouseAllButton_Click" />
+            <Button x:Name="nextButton" Content="Вперёд" 
+                    Margin="5,5,5,0" Click="nextButton_Click" />
+            <Button x:Name="BackButton" Content="Назад" 
+                    Margin="5,5,5,0" Click="BackButton_Click" />
+        </StackPanel>
+
+        <GridSplitter Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" 
+                      Width="2" HorizontalAlignment="Stretch" />
+
+        <Frame x:Name="RootFrame" Grid.Column="2" NavigationUIVisibility="Hidden" LoadCompleted="RootFrame_LoadCompleted" />
+    </Grid>
+</Window>

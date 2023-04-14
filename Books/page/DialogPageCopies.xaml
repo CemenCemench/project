@@ -1,0 +1,45 @@
+﻿<Page x:Class="Books.page.DialogPageCopies"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Books.page"
+      mc:Ignorable="d" 
+            d:DesignHeight="500" d:DesignWidth="400"
+      Title="DialogPageCopies"  Background="White">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Content="Новый читатель" x:Name="CaptionLabel"/>
+
+        <StackPanel Grid.Row="1" Orientation="Vertical" Margin="5,0">
+            <Label Content="Фамилия"/>
+            <TextBox x:Name="SurNameTextBox" Text="{Binding Readers.SurName}"/>
+            <Label Content="Имя"/>
+            <TextBox x:Name="FirstNameTextBox" Text="{Binding Readers.FirstName}"/>
+            <Label Content="Отчество"/>
+            <TextBox x:Name="PatronymicNameTextBox" Text="{Binding Readers.Patronymic}"/>
+            <Label Content="Дата рождения"/>
+            <DatePicker x:Name="BirthdateDatePicker" SelectedDate="{Binding Readers.Birthdate}"/>
+            <Label Content="Пол"/>
+            <ComboBox x:Name="SexesComboBox" ItemsSource="{Binding Gender}" SelectedItem="{Binding Readers.GenId }" DisplayMemberPath="Name"/>
+            <Label Content="Фотография"/>
+            <StackPanel Orientation="Horizontal">
+                <Border Background="LightGray" BorderBrush="Gray" BorderThickness="1">
+                    <Image x:Name="PhotoImage" Height="150" Width="150"/>
+                </Border>
+                <StackPanel Orientation="Vertical" Margin="10,0">
+                    <Button Content="Загрузить" x:Name="LoadingImageButton" Height="25" Width="75"/>
+                    <Button Content="Очистить" x:Name="CleenImageButton" Height="25" Width="75" Margin="0,5,0,0"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10">
+                <Button x:Name="CancalButton" Content="закрыть" Height="25" Width="75"/>
+                <Button x:Name="OkButton" Content="Ок" Height="25" Width="75" Margin="10,0,0,0"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

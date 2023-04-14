@@ -1,0 +1,41 @@
+﻿<Page x:Class="Books.page.DialogPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Books.page"
+      mc:Ignorable="d" 
+      d:DesignHeight="420" d:DesignWidth="250"
+      Title="DialogPage"  Background="White">
+
+    <Grid>
+        <StackPanel Margin="5,0" >
+            <Label Content="Новая книга" x:Name="labelNewBook" />
+            <Label Content="Наименование" x:Name="labelname" Margin="0,5,0,5"/>
+            <TextBox x:Name="TextBoxname" Margin="0,0,0,5" Text="{Binding Books.Name}" LostFocus="TextBoxname_LostFocus" />
+            <Label Content="Авторы" x:Name="labelAnthors"  Margin="0,0,0,5"/>
+            <TextBox Height="60" x:Name="TextBoxAnthors" Margin="0,0,0,5" Text="{Binding Books.Anthors}" LostFocus="TextBoxname_LostFocus" />
+            <Label Content="Издательство" />
+            <ComboBox x:Name="PublishesComboBox" 
+                      TabIndex="0"  ItemsSource="{Binding Publishers}" DisplayMemberPath="Name" SelectedValuePath="PubId" 
+                      SelectedValue="{Binding Books.PubId}" />
+            <Label Content="Год издания" />
+            <TextBox x:Name="PublishYearTextBox" 
+                     TabIndex="4"  Text="{Binding Books.PublishYear}"/>
+            <Label Content="Комментарии" />
+            <TextBox x:Name="NotesTextBox" 
+                     Height="66"
+                     TextWrapping="Wrap"
+                     VerticalContentAlignment="Top"
+                     HorizontalScrollBarVisibility="Disabled"
+                     VerticalScrollBarVisibility="Auto"
+                     TabIndex="7" Text="{Binding Noties}" />
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,15">
+                <Button Content="Отмена" Height="25" Width="75" x:Name="cancelButton" TabIndex="100" Click="cancelButton_Click" RenderTransformOrigin="0.493,0.64"/>
+                <Button Content="ОК" Height="25" Width="75" x:Name="ОКButton" Margin="10,0,0,0" TabIndex="101" Click="ОКButton_Click"  IsDefault="True"/>
+            </StackPanel>
+        </StackPanel>
+        
+    </Grid>
+</Page>

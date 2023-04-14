@@ -1,0 +1,62 @@
+﻿<Application x:Class="Books.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Books"
+             StartupUri="AuthWindow.xaml">
+    <Application.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#E3EFFF"/>
+            <Setter Property="Foreground" Value="#4A70A6"/>
+            <Setter Property="Height" Value="22"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True" >
+                    <Setter Property="Background" Value="#FFE1FC"/>
+                    <Setter Property="Foreground" Value="#A6499E"/>
+                    <Setter Property="Height" Value="22"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="CaptionLable">
+            <Setter Property="Control.Background" Value="#E3EFFF"/>
+            <Setter Property="Control.Foreground" Value="#4A70A6"/>
+            <Setter Property="Control.FontSize" Value="14"/>
+            <Setter Property="Control.FontWeight" Value="Bold"/>
+        </Style>
+        <Style TargetType="DataGrid">
+            <Setter Property="AutoGenerateColumns" Value="False"/>
+            <Setter Property="IsReadOnly" Value="True"/>
+            <Setter Property="SelectionMode" Value="Single"/>
+            <Setter Property="CanUserResizeRows" Value="False"/>
+            <Setter Property="VerticalGridLinesBrush" Value="Silver"/>
+            <Setter Property="HorizontalGridLinesBrush" Value="Silver"/>
+            <Setter Property="BorderBrush" Value="#A69849"/>
+            <Setter Property="BorderThickness" Value="0.5"/>
+            <Setter Property="RowHeaderWidth" Value="0"/>
+            <Setter Property="HorizontalScrollBarVisibility" Value="Hidden"/>
+            <Setter Property="Background" Value="WhiteSmoke"/>
+        </Style>
+
+        <Style TargetType="DataGridCell">
+            <Setter Property="Foreground" Value="DarkSlateGray"/>
+            <Style.Triggers>
+                <Trigger Property="DataGridCell.IsSelected" Value="True">
+                    <Setter Property="Background" Value="#E3EFFF"/>
+                    <Setter Property="BorderBrush" Value="#E3EFFF"/>
+                    <Setter Property="Foreground" Value="#4A70A6"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="InactivePageButtonSyle" TargetType="Button">
+            <Setter Property="Background" Value="#E3EFFF"/>
+            <Setter Property="Foreground" Value="#4A70A6"/>
+            <Setter Property="Height" Value="22"/>
+        </Style>
+
+        <Style x:Key="activePageButtonSyle" TargetType="Button">
+            <Setter Property="Background" Value="#FFE1FC"/>
+            <Setter Property="Foreground" Value="#A6499E"/>
+            <Setter Property="Height" Value="22"/>
+        </Style>
+    </Application.Resources>
+</Application>
